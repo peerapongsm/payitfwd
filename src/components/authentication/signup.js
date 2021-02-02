@@ -44,7 +44,7 @@ export default class Signup extends React.Component {
   render() {
     if (this.state.submitted) {
       return (
-        <Redirect to="/login"/>
+        <Redirect to="/"/>
       )
     } else {
       return (
