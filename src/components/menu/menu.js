@@ -9,9 +9,9 @@ import './menu.css'
 class Menu extends React.Component {
 
   render() {
-    let state = this.props.state;
+    let user = this.props.user;
     let callBack = this.props.callBack;
-    if (state.user !== undefined) {
+    if (user !== undefined) {
       return (
         <Navbar collapseOnSelect expand="xl" bg="dark" variant="dark">
           <Navbar.Brand href="/">PayItFwd</Navbar.Brand>
@@ -25,7 +25,7 @@ class Menu extends React.Component {
               <Form inline>
                 <FormControl type="text" placeholder="Find restaurant..." className="mr-sm-2" />
               </Form>
-              <NavDropdown title={state.user.displayName} id="basic-nav-dropdown">
+              <NavDropdown title={user.displayName} id="basic-nav-dropdown">
                 <NavDropdown.Item href="/setting">Setting</NavDropdown.Item>
                 <NavDropdown.Item onClick={callBack}>Sign out</NavDropdown.Item>
               </NavDropdown>

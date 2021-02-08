@@ -1,0 +1,359 @@
+[
+ {
+    "restaurant": "McDonald",
+    "address": "1900 Commerce St.",
+    "hours": "7:00 am - 2:00 am",
+    "img": "https://pbs.twimg.com/profile_images/1345021349312380928/X9cOv2ki_400x400.jpg",
+    "menu": [
+      {
+        "name": "Hamburger",
+        "price": "$1.86",
+        "allergy": "none",
+        "img": "https://i.pinimg.com/originals/c9/9e/62/c99e623af06afd4485e401d785cd3659.png"
+      },
+      {
+        "name": "Cheeseburger",
+        "price": "$2.28",
+        "allergy": "cheese",
+        "img": "https://i.pinimg.com/originals/8b/61/11/8b611136ead0d4c247f0fef92925f284.jpg"
+      },{
+        "name": "Fountain drink",
+        "price": "$1.00",
+        "allergy": "none",
+        "img": "https://e7.pngegg.com/pngimages/692/190/png-clipart-fizzy-drinks-coca-cola-mcdonald-s-big-mac-diet-coke-hamburger-coca-cola.png"
+      }
+    ]
+  },
+{
+	"restaurant": "Panda Express",
+	"address": "41st Division Way, Tacoma, WA 98433",
+	"hours": "10:00 am – 8:00 pm",
+	"img": "https://tse1.mm.bing.net/th?id=OIP.vmHq-u5GTZgRBStK76b1ZAHaHa&pid=Api&P=0&w=300&h=300",
+	"menu": [
+  	{
+    	"name": "Orange Chicken ",
+    	"price": "$6.70",
+    	"allergy": "egg, gluten, milk",
+    	"img": "https://lh3.googleusercontent.com/zmJSJ-hZTxv5K6bYJyu1jpRCUKh57Cz4x8b6PR95i_tQw6wKhW0K57d7cct3e8R9ArZz0vJG3B0_67Ey7cok2rmOcm1hKUHdz5X5cpGy=w900"
+  	},
+  	{
+    	"name": "Honey Walnut Shrimp",
+    	"price": "$7.95",
+    	"allergy": "egg, milk, soy",
+    	"img": "https://www.feedbacksurveyreview.com/wp-content/uploads/2019/03/Panda-Express-Honey-Walnut-Shrimp-e1509342121298-1-624x383.jpg"
+  	},{
+    	"name": "Coca Cola",
+    	"price": "$2.00",
+    	"allergy": "none",
+    	"img": "https://tse1.mm.bing.net/th?id=OIP.qbot-gGb4P8S9s88nb2HeQAAAA&pid=Api&P=0&w=300&h=300"
+  	}
+	]
+  },
+
+{
+	"restaurant": "Red Robin",
+	"address": " 3901 S Steele St, Tacoma, WA 98409",
+	"hours": "11:00am – 9:00pm",
+	"img": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8f/Red_Robin_logo.svg/1200px-Red_Robin_logo.svg.png",
+	"menu": [
+  	{
+    	"name": "Chili Chili Cheese Fries",
+    	"price": "$8.24",
+    	"allergy": "milk",
+    	"img": "http://food.fnr.sndimg.com/content/dam/images/food/fullset/2016/4/5/1/HE_red-robin-chili-cheese-fries_s4x3.jpg.rend.hgtvcom.1280.960.suffix/1459878899905.jpeg"
+  	},
+  	{
+    	"name": "Red’s Tavern Double",
+    	"price": "$7.20",
+    	"allergy": "none",
+    	"img": "https://prnewswire2-a.akamaihd.net/p/1893751/sp/189375100/thumbnail/entry_id/1_onon2afi/def_height/800/def_width/1200/version/100011/type/1"
+  	},{
+    	"name": "Freckled Lemonade",
+    	"price": "$3.08",
+    	"allergy": "none",
+    	"img": "https://bloximages.chicago2.vip.townnews.com/pantagraph.com/content/tncms/assets/v3/editorial/5/33/5330482f-d0d1-51f5-8834-da32efd8ab63/5570ea58ae04d.image.jpg"
+  	}
+	]
+  },
+{
+	"restaurant": "Applebees",
+	"address": "1919 S 72nd St, Tacoma, WA 98408",
+	"hours": "11:00am – 11:00pm",
+	"img": "https://tse4.mm.bing.net/th?id=OIP.fOxdnp-DRcs3thnYiwIWMAHaDf&pid=Api&P=0&w=326&h=154",
+	"menu": [
+  	{
+    	"name": "Riblet Plate",
+    	"price": "$11.59",
+    	"allergy": "none",
+    	"img": "https://cdn.winsightmedia.com/platform/files/public/2018-01/background/applebees-riblets_1514922974.jpg"
+  	},
+  	{
+    	"name": "Boneless Wings",
+    	"price": "$10.99",
+    	"allergy": "none",
+    	"img": "https://drlivingood.com/wp-content/uploads/2019/01/DLGs-Wings.jpg"
+  	},{
+    	"name": "Fountain Drinks",
+    	"price": "$0.99",
+    	"allergy": "none",
+    	"img": "https://www.ljsilvers.com/wp-content/uploads/2019/11/Drinks-2-2-1240x620.jpg"
+  	}
+	]
+  },
+
+{
+	"restaurant": "Olive Garden ",
+	"address": "1921 S 72nd St, Tacoma, WA 98408",
+	"hours": "11:00am – 10:00pm",
+	"img": "https://tse2.mm.bing.net/th?id=OIP.qptK0aZT2g8OohOQ2B66JgHaFY&pid=Api&P=0&w=213&h=156",
+	"menu": [
+  	{
+    	"name": "Chicken Marsala",
+    	"price": "$19.49",
+    	"allergy": "none",
+    	"img": "https://thecozycook.com/wp-content/uploads/2017/02/Stuffed-Chicken-Marsala.jpg"
+  	},
+  	{
+    	"name": "Chicken Alfredo",
+    	"price": "$19.49",
+    	"allergy": "none",
+    	"img": "https://tse1.mm.bing.net/th?id=OIP.gWUg90UwSbKF6yV20UYJ_wHaKX&pid=Api&P=0&w=300&h=300"
+  	},{
+    	"name": "Raspberry Lemonade",
+    	"price": "$3.79",
+    	"allergy": "none",
+    	"img": "https://tse1.mm.bing.net/th?id=OIP.F874BtVk2n5-AfvzIjEiYQHaEl&pid=Api&P=0&w=282&h=175"
+  	}
+	]
+  },
+
+{
+	"restaurant": "Bjs",
+	"address": "4502 S Steele St, Tacoma, WA 98409",
+	"hours": "11:00am – 9:00pm",
+	"img": "https://tse1.mm.bing.net/th?id=OIP.hq_DFzSvtP5VHpOygd_TawHaHw&pid=Api&P=0&w=300&h=300",
+	"menu": [
+  	{
+    	"name": "Loaded Nachos",
+    	"price": "$14.45",
+    	"allergy": "none",
+    	"img": "https://tse1.mm.bing.net/th?id=OIP.TPb61omCWEw49uhR-aKVhwHaGK&pid=Api&P=0&w=191&h=160"
+  	},
+  	{
+    	"name": "Avocado Egg Rolls",
+    	"price": "$13.95",
+    	"allergy": "none",
+    	"img": "http://3.bp.blogspot.com/-BAkzTFLMq4A/Tods_zaBoDI/AAAAAAAABs0/UIT1Lu2M-ro/s1600/egg+rolls.jpg"
+  	},{
+    	"name": "Mountain Dew",
+    	"price": "$1.95",
+    	"allergy": "none",
+    	"img": "https://i.pinimg.com/originals/80/66/2e/80662ebc8084a0cd93dfb16a025118b9.png"
+  	}
+	]
+  },
+{
+	"restaurant": "Burger King",
+	"address": " 2909 S 38th St, Tacoma, WA 98409",
+	"hours": "7:00am – 11:00pm",
+	"img": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/Burger_King_logo.svg/1024px-Burger_King_logo.svg.png",
+	"menu": [
+  	{
+    	"name": "Whopper Meal",
+    	"price": "$9.48",
+    	"allergy": "none",
+    	"img": "http://bk-latam-prod.s3.amazonaws.com/sites/burgerking.com.mx/files/WHOPPER-500X540-GRILLED.png"
+  	},
+  	{
+    	"name": "Steakhouse King Meal",
+    	"price": "$9.69",
+    	"allergy": "none",
+    	"img": "https://canadify.com/wp-content/uploads/2020/09/Burger-King-Canada-Introduces-New-Steakhouse-King.jpg"
+  	},{
+    	"name": "Diet Coke",
+    	"price": "$1.00",
+    	"allergy": "none",
+    	"img": "http://bk-ca-prd.s3.amazonaws.com/sites/burgerking.ca/files/Hero_0011_Diet_Coke.png"
+  	}
+	]
+  },
+{
+	"restaurant": "Taco Bell",
+	"address": " 5308 176th St E, Tacoma, WA 98446",
+	"hours": "7:00am – 10:00pm",
+	"img": "https://tse2.mm.bing.net/th?id=OIP.V2WvlrFuCwQELyCDmOgMzwHaHa&pid=Api&P=0&w=300&h=300",
+	"menu": [
+  	{
+    	"name": "Crunchwrap Supreme",
+    	"price": "$4.49",
+    	"allergy": "none",
+    	"img": "https://life-in-the-lofthouse.com/wp-content/uploads/2014/07/Crunch_Wrap_Supreme.jpg"
+  	},
+  	{
+    	"name": "Power menu Bowl",
+    	"price": "$6.49",
+    	"allergy": "none",
+    	"img": "https://tse3.mm.bing.net/th?id=OIP.PsOHUgnSU-mavIbLtcijCgHaE6&pid=Api&P=0&w=227&h=151"
+  	},{
+    	"name": "Midnight Berry Freeze",
+    	"price": "$3.19",
+    	"allergy": "none",
+    	"img": "https://www.fastfoodpost.com/wp-content/uploads/2020/12/Taco-Bell-Releases-New-Midnight-Berry-Freeze-And-Blue-Raspberry-Freeze.jpg"
+  	}
+	]
+  },
+{
+	"restaurant": "Taco Time ",
+	"address": "2915 6th Ave, Tacoma, WA 98406",
+	"hours": "10:00am – 9:00pm",
+	"img": "https://media.glassdoor.com/sqll/764027/taco-time-northwest-squarelogo-1426483175176.png",
+	"menu": [
+  	{
+    	"name": "Combo Soft Burrito",
+    	"price": "$9.29",
+    	"allergy": "none",
+    	"img": "https://taco.sfo2.digitaloceanspaces.com/2018/10/1-Soft-Burrito-Combo-BEEF.png"
+  	},
+  	{
+    	"name": "Soft Taco",
+    	"price": "$4.79",
+    	"allergy": "gluten",
+    	"img": "https://taco.sfo2.digitaloceanspaces.com/2018/10/VEGGIE-Soft-Taco.png"
+  	},{
+    	"name": "Soft Drink",
+    	"price": "$2.59",
+    	"allergy": "none",
+    	"img": "https://tse1.mm.bing.net/th?id=OIP.iGwIldjKja5_xH99Z0qp0wHaE8&pid=Api&P=0&w=256&h=171"
+  	}
+	]
+  },
+{
+	"restaurant": "Wendys ",
+	"address": "15805 Pacific Ave S, Tacoma, WA 98444",
+	"hours": "6:30am – 1:00am",
+	"img": "https://moniquedmead.files.wordpress.com/2014/02/wendys-logo.jpg",
+	"menu": [
+  	{
+    	"name": "Pretzel Bacon Pub Double",
+    	"price": "$7.29",
+    	"allergy": "none",
+    	"img": "https://www.fastfoodpost.com/wp-content/uploads/2020/09/Wendys-Debuts-New-Pretzel-Bacon-Pub-Cheeseburger-And-New-Pretzel-Pub-Chicken-Sandwich.jpg"
+  	},
+  	{
+    	"name": "Dave’s Double",
+    	"price": "$6.19",
+    	"allergy": "none",
+    	"img": "https://www.eatthis.com/wp-content/uploads/2018/01/wendys-daves-double-500x365.jpg"
+  	},{
+    	"name": "Fountain Drink",
+    	"price": "$1.00",
+    	"allergy": "none",
+    	"img": "https://tse4.mm.bing.net/th?id=OIP.Mk_1Zl6zIpzLaHr-x0GOaAHaF_&pid=Api&P=0&w=201&h=163"
+  	}
+	]
+  },
+
+{
+	"restaurant": "Jack n Box",
+	"address": "2054 6th Ave, Tacoma, WA 98403",
+	"hours": "24 hours",
+	"img": "https://upload.wikimedia.org/wikipedia/en/thumb/6/6e/Jack_in_the_Box_2009_logo.svg/1200px-Jack_in_the_Box_2009_logo.svg.png",
+	"menu": [
+  	{
+    	"name": "Sourdough Jack",
+    	"price": "$8.39",
+    	"allergy": "none",
+    	"img": "https://vignette.wikia.nocookie.net/jackinthebox/images/4/48/Sourdoughjack.jpg/revision/latest?cb=20140103204222"
+  	},
+  	{
+    	"name": "Ultimate Cheeseburger Combo",
+    	"price": "$11.49",
+    	"allergy": "none",
+    	"img": "https://tse1.mm.bing.net/th?id=OIP.CG0ycqf6cM73v7UClnvlIgAAAA&pid=Api&P=0&w=209&h=158"
+  	},{
+    	"name": "Oreo Cookie Shake",
+    	"price": "$5.65",
+    	"allergy": "none",
+    	"img": "https://images.ctfassets.net/a9odgsv44wmq/3wbwYBhYmAyUs42qQeIYm6/e0af8eaf716bfc6a4b8d90ceee5f11c2/2_OreoShake.png?w=1200&h=630"
+  	}
+	]
+  },
+
+{
+	"restaurant": "Chick-fil-A ",
+	"address": " 3902 S Steele St, Tacoma, WA 98409",
+	"hours": "8:00am – 10:00pm",
+	"img": "https://1000logos.net/wp-content/uploads/2018/01/chick-fil-a-logo.png",
+	"menu": [
+  	{
+    	"name": "Chick-fil-A Chicken Sandwhich",
+    	"price": "$3.75",
+    	"allergy": "peanut",
+    	"img": "https://cdn.vox-cdn.com/thumbor/m-Nw0z9T_zRJqOCKTiRWh4vq8_Q=/0x0:4584x3056/1200x800/filters:focal(1926x1162:2658x1894)/cdn.vox-cdn.com/uploads/chorus_image/image/56751883/chickfila_spicy_sandwich.0.jpg"
+  	},
+  	{
+    	"name": "Spicy Chicken Sandwich",
+    	"price": "$3.99",
+    	"allergy": "none",
+    	"img": "https://tse1.mm.bing.net/th?id=OIP.RNpUehsD_MPn-7_aoQr3OgHaE8&pid=Api&P=0&w=275&h=184"
+  	},{
+    	"name": "Lemonade",
+    	"price": "$1.99",
+    	"allergy": "none",
+    	"img": "https://imagesvc.meredithcorp.io/v3/mm/image?url=https://static.onecms.io/wp-content/uploads/sites/24/2019/01/lemonade-a-2000.jpg"
+  	}
+	]
+  },
+
+{
+	"restaurant": "Habit Burger ",
+	"address": "2601 N Pearl St, Tacoma, WA 98407",
+	"hours": "10:30am – 10:00pm",
+	"img": "https://tse3.mm.bing.net/th?id=OIP.az1Q6n8j74SbesFgiVDLEAHaFT&pid=Api&P=0&w=218&h=157",
+	"menu": [
+  	{
+    	"name": "Original Charburger",
+    	"price": "$10.00",
+    	"allergy": "peanut",
+    	"img": "https://wtop.com/wp-content/uploads/2018/07/The-Habit-Burger-Grill-Original-Charburger-and-fries.jpg"
+  	},
+  	{
+    	"name": "Santa Barbara Char",
+    	"price": "$7.45",
+    	"allergy": "none",
+    	"img": "https://prnewswire2-a.akamaihd.net/p/1893751/sp/189375100/thumbnail/entry_id/0_k89pl08q/def_height/500/def_width/500/version/100012/type/1"
+  	},{
+    	"name": "Bottled Water",
+    	"price": "$2.75",
+    	"allergy": "none",
+    	"img": "https://media2.popsugar-assets.com/files/thumbor/oUUQDbG6yDYSgG-5BQS6QRGj0RE/fit-in/2048xorig/filters:format_auto-!!-:strip_icc-!!-/2015/10/28/798/n/1922398/fb0bffcf28178694_spin_prod_ec_1567913002.jpeg"
+  	}
+	]
+  },
+
+{
+	"restaurant": "Sonic ",
+	"address": "5114 6th Ave, Tacoma, WA 98406",
+	"hours": "9:00am – 12:00pm",
+	"img": "https://tse2.mm.bing.net/th?id=OIP.bDH1vNo9mhl-R-UZdH4MzgHaEN&pid=Api&P=0&w=314&h=180",
+	"menu": [
+  	{
+    	"name": "Sonic Cheeseburger",
+    	"price": "$3.89",
+    	"allergy": "peanut",
+    	"img": "https://www.qsrmagazine.com/sites/default/files/styles/story_page/public/news-image/sonic-introduces-new-extra-cheesy-stack-cheeseburger.jpg?itok=IDKMI5Ph"
+  	},
+  	{
+    	"name": "New York Dog ",
+    	"price": "$1.99",
+    	"allergy": "none",
+    	"img": "https://i.pinimg.com/736x/57/43/2d/57432d7bca934e0671be049fddf0d5be.jpg"
+  	},{
+    	"name": "Slushes",
+    	"price": "$1.19",
+    	"allergy": "none",
+    	"img": "https://tse1.mm.bing.net/th?id=OIP.clOjt5Lu_2Xkuvs07TtzGwHaFP&pid=Api&P=0&w=221&h=157"
+  	}
+	]
+  }
+]
