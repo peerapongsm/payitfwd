@@ -10,7 +10,7 @@ export default class StoreList extends React.Component {
     let storeCards = stores.map((store) => {
       return <StoreCard key={store.restaurant} store={store}/>;
     })
-    //console.log(stores[0].restaurant);
+
     return (
       <CardDeck style={{ margin: "2.5rem"}}>
         {storeCards}
@@ -38,8 +38,8 @@ class StoreCard extends React.Component {
       );
     } else {
       return (
-        <Card style={{ "min-width": '18rem', "align-items": 'center', margin: "1rem", cursor: "pointer"}} onClick={this.handleCLick}>
-          <Card.Img variant="top" src={store.img} style={{ "width": '18rem', "height": "10rem"}}/>
+        <Card style={{ "minWidth": '18rem', "alignItems": 'center', "margin": "1rem", "cursor": "pointer"}} onClick={this.handleCLick}>
+          <Card.Img variant="top" src={store.img} style={{ "width": '18rem', "height": "10rem", "padding": "0.5rem"}}/>
           <Card.Body>
             <Card.Title>{store.restaurant}</Card.Title>
             <Card.Text>

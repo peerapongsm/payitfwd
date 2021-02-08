@@ -13,7 +13,7 @@ class Menu extends React.Component {
     let callBack = this.props.callBack;
     if (user !== undefined) {
       return (
-        <Navbar collapseOnSelect expand="xl" bg="dark" variant="dark">
+        <Navbar sticky="top" collapseOnSelect expand="xl" bg="dark" variant="dark">
           <Navbar.Brand href="/">PayItFwd</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
@@ -35,7 +35,7 @@ class Menu extends React.Component {
       )
     } else {
       return (
-        <Navbar bg="dark" variant="dark" expand="lg">
+        <Navbar sticky="top" bg="dark" variant="dark" expand="lg">
           <Navbar.Brand href="/">PayItFwd</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Nav className="mr-auto">

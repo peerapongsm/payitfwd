@@ -4,6 +4,8 @@ import './App.css';
 import Login from './components/authentication/login';
 import Signup from './components/authentication/signup';
 import StoreList from './components/store/storelist';
+import Setting from './components/account/setting';
+import Spinner from 'react-bootstrap/Spinner'
 import {Route, Switch} from 'react-router-dom';
 import firebase from "firebase/app";
 
@@ -13,7 +15,8 @@ class App extends React.Component  {
     super(props);
     this.state  = {
       user: undefined,
-      stores: []
+      stores: [],
+      loading: true
     }
   }
 
@@ -32,6 +35,7 @@ class App extends React.Component  {
       this.setState({stores: val});
     });
 
+    this.setState({loading: false});
   }
 
   componentWillUnmount() {
@@ -47,22 +51,33 @@ class App extends React.Component  {
   }
 
   render() {
-    return (
-      <div className="App">
-        <Menu user={this.state.user} callBack={this.handleSignOut}/>
-        <Switch>
-          <Route exact path="/">
-            <StoreList stores={this.state.stores}/>
-          </Route>
-          <Route path="/login">
-            <Login callBack={this.handleError}/>
-          </Route>
-          <Route path="/signup">
-            <Signup callBack={this.handleError}/>
-          </Route>
-        </Switch>
-      </div>
-    );
+    if (this.state.loading) {
+      return (
+        <Spinner animation="border" role="status">
+          <span className="sr-only">Loading...</span>
+        </Spinner>
+      )
+    } else {
+      return (
+        <div className="App">
+          <Menu user={this.state.user} callBack={this.handleSignOut}/>
+          <Switch>
+            <Route exact path="/">
+              <StoreList stores={this.state.stores}/>
+            </Route>
+            <Route path="/login">
+              <Login callBack={this.handleError}/>
+            </Route>
+            <Route path="/signup">
+              <Signup callBack={this.handleError}/>
+            </Route>
+            <Route path="/setting">
+              <Setting />
+            </Route>
+          </Switch>
+        </div>
+      );
+    }
   }
 }
 
