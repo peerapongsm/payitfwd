@@ -3,7 +3,6 @@ import Nav from 'react-bootstrap/Nav'
 import Tab from 'react-bootstrap/Tab'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
-import Payment from './payment'
 import Account from './account'
 
 export default class Setting extends React.Component {
