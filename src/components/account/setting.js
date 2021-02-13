@@ -4,6 +4,7 @@ import Tab from 'react-bootstrap/Tab'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import Account from './account'
+import Payment from './payment'
 
 export default class Setting extends React.Component {
 
@@ -25,11 +26,11 @@ export default class Setting extends React.Component {
           <Col sm={9} style={{ display:"flex", marginTop: "2.5rem"}}>
             <Tab.Content>
               <Tab.Pane eventKey="account">
-                <h1 style={{marginBottom: "4rem"}}>Account Setting</h1>
+                <h1 style={{marginBottom: "2rem"}}>Account Setting</h1>
                 <Account />
               </Tab.Pane>
               <Tab.Pane eventKey="payment">
-                <h1>Payment setting</h1>
+                <Payment />
               </Tab.Pane>
             </Tab.Content>
           </Col>

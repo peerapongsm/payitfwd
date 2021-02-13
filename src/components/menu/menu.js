@@ -2,8 +2,8 @@ import React from 'react';
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import Nav from 'react-bootstrap/Nav'
-import FormControl from "react-bootstrap/FormControl";
-import Form from "react-bootstrap/Form";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faShoppingCart } from '@fortawesome/free-solid-svg-icons'
 import './menu.css'
 
 class Menu extends React.Component {
@@ -14,19 +14,24 @@ class Menu extends React.Component {
     if (user !== undefined) {
       return (
         <Navbar sticky="top" collapseOnSelect expand="xl" bg="dark" variant="dark">
-          <Navbar.Brand href="/">PayItFwd</Navbar.Brand>
+          <Navbar.Brand href="/" style={{marginLeft: "1.5rem"}}>PayItFwd</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
-            <Nav className="mr-auto">
-              <Nav.Link href="/">Donate</Nav.Link>
-              <Nav.Link href="/available">Food Avaialable</Nav.Link>
+            <Nav className="mr-auto" activeKey="donate">
+              <Nav.Item>
+                <Nav.Link href="/" eventKey="donate">Donate</Nav.Link>
+              </Nav.Item>
+              <Nav.Item>
+                <Nav.Link href="/available" eventKey="available">Food Avaialable</Nav.Link>
+              </Nav.Item>
             </Nav>
             <Nav>
-              <Form inline>
-                <FormControl type="text" placeholder="Find restaurant..." className="mr-sm-2" />
-              </Form>
+              <FontAwesomeIcon icon={faShoppingCart} size="2x"/>
+            </Nav>
+            <Nav style={{marginRight: "1.5rem"}}>
               <NavDropdown title={user.displayName} id="basic-nav-dropdown">
                 <NavDropdown.Item href="/setting">Setting</NavDropdown.Item>
+                <NavDropdown.Item href="/history">Order History</NavDropdown.Item>
                 <NavDropdown.Item onClick={callBack}>Sign out</NavDropdown.Item>
               </NavDropdown>
             </Nav>
@@ -38,14 +43,15 @@ class Menu extends React.Component {
         <Navbar sticky="top" bg="dark" variant="dark" expand="lg">
           <Navbar.Brand href="/">PayItFwd</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
-            <Nav className="mr-auto">
-              <Nav.Link href="/">Donate</Nav.Link>
-              <Nav.Link href="/available">Food Avaialable</Nav.Link>
+            <Nav className="mr-auto" activeKey="donate">
+              <Nav.Item>
+                <Nav.Link href="/" eventKey="donate">Donate</Nav.Link>
+              </Nav.Item>
+              <Nav.Item>
+                <Nav.Link href="/available" eventKey="available">Food Avaialable</Nav.Link>
+              </Nav.Item>
             </Nav>
             <Nav>
-              <Form inline>
-                <FormControl type="text" placeholder="Find restaurant..." className="mr-sm-2" />
-              </Form>
               <Nav.Link href="/login">Sign in</Nav.Link>
             </Nav>
         </Navbar>
