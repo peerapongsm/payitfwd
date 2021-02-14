@@ -75,7 +75,8 @@ export default class Signup extends React.Component {
                 onChange={this.handleChange}
               />
             </Form.Group>
-            <Button block size="lg" type="submit">
+            <Button block size="lg" type="submit"
+              disabled={this.state.password.length === 0 && this.state.password !== this.state.confirmPassword}>
               Sign up
             </Button>
           </Form>

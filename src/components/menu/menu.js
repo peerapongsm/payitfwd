@@ -17,18 +17,23 @@ class Menu extends React.Component {
           <Navbar.Brand href="/" style={{marginLeft: "1.5rem"}}>PayItFwd</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
-            <Nav className="mr-auto" activeKey="donate">
+            <Nav className="mr-auto" activeKey="donate"
+                style={{fontSize:"14pt"}}>
               <Nav.Item>
                 <Nav.Link href="/" eventKey="donate">Donate</Nav.Link>
               </Nav.Item>
               <Nav.Item>
-                <Nav.Link href="/available" eventKey="available">Food Avaialable</Nav.Link>
+                <Nav.Link href="/available" eventKey="available">Food Available</Nav.Link>
               </Nav.Item>
             </Nav>
             <Nav>
-              <FontAwesomeIcon icon={faShoppingCart} size="2x"/>
+              <Nav.Item>
+                <Nav.Link href="/order">
+                  <FontAwesomeIcon icon={faShoppingCart} size="2x"/>
+                </Nav.Link>
+              </Nav.Item>
             </Nav>
-            <Nav style={{marginRight: "1.5rem"}}>
+            <Nav style={{marginRight: "1.5rem", fontSize:"16pt"}}>
               <NavDropdown title={user.displayName} id="basic-nav-dropdown">
                 <NavDropdown.Item href="/setting">Setting</NavDropdown.Item>
                 <NavDropdown.Item href="/history">Order History</NavDropdown.Item>

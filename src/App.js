@@ -6,6 +6,7 @@ import Signup from './components/authentication/signup';
 import StoreList from './components/store/storelist';
 import StorePage  from './components/store/storepage';
 import AvaialableList from './components/store/availablelist';
+import Order from './components/orders/order';
 import Setting from './components/account/setting';
 import Spinner from 'react-bootstrap/Spinner'
 import {Route, Switch} from 'react-router-dom';
@@ -27,6 +28,7 @@ class App extends React.Component  {
     this.authUnRegFunc = firebase.auth().onAuthStateChanged((firebaseUser) => {
       if (firebaseUser) {
         this.setState({user: firebaseUser});
+        window.localStorage.setItem('user', firebaseUser.displayName);
       } else {
         this.setState({user: undefined});
       }
@@ -42,6 +44,7 @@ class App extends React.Component  {
 
   componentWillUnmount() {
     this.authUnRegFunc();
+    window.localStorage.clear();
   }
 
   handleError = (err) => {
@@ -70,16 +73,19 @@ class App extends React.Component  {
             <Route exact path="/available">
               <AvaialableList />
             </Route>
-            <Route exact path="/store/:storeName">
-              <StorePage stores={this.state.stores}/>
+            <Route exact path="/order">
+              <Order name={window.localStorage.getItem('user')} />
             </Route>
-            <Route path="/login">
+            <Route exact path="/store/:storeName">
+              <StorePage user={this.state.user} stores={this.state.stores}/>
+            </Route>
+            <Route exact path="/login">
               <Login callBack={this.handleError}/>
             </Route>
-            <Route path="/signup">
+            <Route exact path="/signup">
               <Signup callBack={this.handleError}/>
             </Route>
-            <Route path="/setting">
+            <Route exact path="/setting">
               <Setting />
             </Route>
           </Switch>

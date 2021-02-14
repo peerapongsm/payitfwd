@@ -1,35 +1,50 @@
-
 import React from 'react';
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import Card from 'react-bootstrap/Card';
 import CardDeck from 'react-bootstrap/CardDeck'
 import Button from 'react-bootstrap/Button'
+import Form from 'react-bootstrap/Form'
+import firebase from 'firebase/app'
 
 export default class StorePage extends React.Component {
+
   constructor(props){
     super(props);
-    this.state = {store: undefined};
+    this.state = {
+      store: undefined
+    };
   }
 
-  componentDidMount(){
+  componentDidMount() {
     let storeName = window.location.pathname;
     let stores = this.props.stores;
     for (let i = 0; i < stores.length; i++) {
       if ("/store/" + stores[i].restaurant.replace(" ", "%20") === storeName) {
         this.setState({store: stores[i]});
+        window.localStorage.setItem('store', JSON.stringify(stores[i]));
         break;
       }
     }
   }
 
-  render() {
-    let store = this.state.store
+  componentWillUnmount() {
+    window.localStorage.clear();
+  }
 
-    if(!store) return <h2>No store specified</h2>
+  render() {
+    let store;
+
+    if (this.state.store !== undefined  && !this.state.store) {
+      store = this.state.store;
+    } else {
+      store = JSON.parse(window.localStorage.getItem('store'));
+    }
+
+    if (!store) return <h2>No store specified</h2>
 
     let menuCards = store.menu.map((menu) => {
-      return <MenuCard key={menu.name} menu={menu}/>;
+      return <MenuCard key={menu.name} menu={menu} user={this.props.user} restaurant={store.restaurant}/>;
     })
 
     return (
@@ -61,6 +76,35 @@ export default class StorePage extends React.Component {
 
 class MenuCard extends React.Component {
 
+  constructor(props){
+    super(props);
+    this.state = {
+      unit: 1
+    };
+  }
+
+  handleOrder = (event) => {
+    event.preventDefault();
+    let price = Number(this.props.menu.price.replace(/[^0-9.-]+/g,"")) * this.state.unit;
+    let newOrder = {
+      restaurant: this.props.restaurant,
+      menu: this.props.menu,
+      price: price,
+      unit: this.state.unit
+    }
+    let name = this.props.user.displayName;
+    firebase.database().ref(name).push(newOrder);
+    this.setState({unit: undefined});
+  }
+
+  handleChange = (event) => {
+    let field = event.target.name;
+    let value = event.target.value;
+    let changes = {};
+    changes[field] = value;
+    this.setState(changes);
+  }
+
   render() {
     let menu = this.props.menu;
     return (
@@ -72,10 +116,18 @@ class MenuCard extends React.Component {
             {menu.price}
           </Card.Text>
           <Card.Text>
-            Allergens : &nbsp;{menu.allergy}
+            Allergens :&nbsp;{menu.allergy}
           </Card.Text>
         </Card.Body>
-        <Button style={{marginBottom:"1rem"}}>Add to cart</Button>
+        <Form onSubmit={this.handleOrder}>
+          <Form.Group controlId="formBasicEmail">
+            <Form.Control name="unit" type="number" defaultValue="1" onChange={this.handleChange}
+              style={{textAlign:"center", width:"7rem"}}/>
+          </Form.Group>
+          <Button type="submit" style={{marginBottom:"1rem", width:"7rem"}}>
+            Add to cart
+          </Button>
+        </Form>
       </Card>
     )
   }
