@@ -4,6 +4,8 @@ import './App.css';
 import Login from './components/authentication/login';
 import Signup from './components/authentication/signup';
 import StoreList from './components/store/storelist';
+import StorePage  from './components/store/storepage';
+import AvaialableList from './components/store/availablelist';
 import Setting from './components/account/setting';
 import Spinner from 'react-bootstrap/Spinner'
 import {Route, Switch} from 'react-router-dom';
@@ -64,6 +66,12 @@ class App extends React.Component  {
           <Switch>
             <Route exact path="/">
               <StoreList stores={this.state.stores}/>
+            </Route>
+            <Route exact path="/available">
+              <AvaialableList />
+            </Route>
+            <Route exact path="/store/:storeName">
+              <StorePage stores={this.state.stores}/>
             </Route>
             <Route path="/login">
               <Login callBack={this.handleError}/>
