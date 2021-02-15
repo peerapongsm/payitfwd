@@ -40,8 +40,10 @@ export default class AvaialableList extends React.Component {
 
     if (orders.length > 1) {
       orders.forEach((order) => {
-        if (order.restaurant !== undefined && order.unit < 1) {
-          firebase.database().ref('ready').child(id).child(order.id).remove();
+        if (!order.unit && order.unit < 1) {
+          if (order.id) {
+            firebase.database().ref('ready').child(id).child(order.id).remove();
+          }
         }
       });
     } else {
