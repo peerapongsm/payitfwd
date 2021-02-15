@@ -75,12 +75,17 @@ export default class StorePage extends React.Component {
 }
 
 class MenuCard extends React.Component {
-
   constructor(props){
     super(props);
     this.state = {
       unit: 1
     };
+  }
+
+  componentWillUnmount() {
+    if (this.props.user !== undefined && this.props.user !== null) {
+      firebase.database().ref(this.props.user.displayName).off();
+    }
   }
 
   handleOrder = (event) => {
@@ -125,7 +130,8 @@ class MenuCard extends React.Component {
             <Form.Control name="unit" type="number" defaultValue={1} onChange={this.handleChange}
               style={{textAlign:"center", width:"7rem"}}/>
           </Form.Group>
-          <Button type="submit" style={{marginBottom:"1rem", width:"7rem"}}>
+          <Button type="submit" disabled={this.state.unit < 1}
+            style={{marginBottom:"1rem", width:"7rem"}}>
             Add to cart
           </Button>
         </Form>
