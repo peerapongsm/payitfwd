@@ -10,19 +10,25 @@ export default class AvaialableList extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      orders: null
+      orders: null,
+      ids: null
     }
   }
 
   componentDidMount() {
     let tempArr = [];
+    let tempId = [];
     firebase.database().ref('ready').on('value', (snap) => {
       snap.forEach((a) => {
         a.forEach((b) => {
           tempArr.push(b.val());
         });
+        tempId.push(a.val().id);
       })
-      this.setState({orders: tempArr});
+      this.setState({
+        orders: tempArr,
+        ids: tempId
+      });
     });
   }
 
@@ -32,33 +38,53 @@ export default class AvaialableList extends React.Component {
 
   render() {
     let orders = this.state.orders;
+    let ref = firebase.database().ref('ready');
+
     if (!orders) {
       orders = JSON.parse(window.localStorage.getItem('orders'));
     }
-    if (!orders || orders.length < 1) return <h2 style={{marginTop:"20rem"}}>No food available :( </h2>
-    let id = orders[orders.length - 1];
 
-    if (orders.length > 1) {
+    if (!orders || orders.length < 1) return <h2 style={{marginTop:"20rem"}}>No food available.</h2>;
+
+    if (orders.length > 0) {
       orders.forEach((order) => {
-        if (!order.unit && order.unit < 1) {
-          if (order.id) {
-            firebase.database().ref('ready').child(id).child(order.id).remove();
-          }
+        if (order.unit !== null && order.unit === 0) {
+          this.state.ids.forEach( (id) => {
+            if (order.id && id &&
+              ref.child(id).child(order.id).get() !== null) {
+              ref.child(id).child(order.id).remove();
+            }
+            if (order.length === 1) {
+              ref.child(id).remove();
+              let index = this.states.ids.indexOf(id);
+              if (Array > -1) {
+                this.states.ids.splice(index, 1);
+              }
+            }
+          })
         }
-      });
-    } else {
-      firebase.database().ref('ready').child(id).remove();
+      })
     }
-
-
+    orders = orders.filter((order) => {
+      return typeof order !== 'string';
+    })
 
     let orderCards = orders.map((order) => {
-        if (order.restaurant !== undefined) {
-          return <OrderCard key={order.id} id={id} order={order}/>;
-        } else {
-          return <></>;
+      let div = <></>;
+      this.state.ids.forEach( (id) => {
+        let key = id + "/" + order.id;
+        if (id && order.id) {
+          ref.child(id).child(order.id).on('value', (snap) => {
+            if (snap.exists()) {
+              div = <OrderCard key={key} id={id} order={order}/>;
+            }
+          });
         }
-    })
+        ref.child(id).child(order.id).off();
+      });
+      return div;
+    });
+
     return (
       <CardDeck style={{ margin: "2.5rem"}}>
         {orderCards}
