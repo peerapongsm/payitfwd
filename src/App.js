@@ -19,7 +19,8 @@ class App extends React.Component  {
     this.state  = {
       user: undefined,
       stores: [],
-      loading: true
+      loading: true,
+      ready: []
     }
   }
 
@@ -39,11 +40,21 @@ class App extends React.Component  {
       this.setState({stores: val});
     });
 
+    firebase.database().ref('ready').on('value', (snap) => {
+      snap.forEach((a) => {
+        a.forEach((b) => {
+          this.state.ready.push(b.val());
+        });
+      })
+      window.localStorage.setItem('ready', JSON.stringify(this.state.ready));
+    });
+
     this.setState({loading: false});
   }
 
   componentWillUnmount() {
     this.authUnRegFunc();
+    firebase.database().ref('stores').off();
     window.localStorage.clear();
   }
 
@@ -71,7 +82,7 @@ class App extends React.Component  {
               <StoreList stores={this.state.stores}/>
             </Route>
             <Route exact path="/available">
-              <AvaialableList />
+              <AvaialableList ready={JSON.parse(window.localStorage.getItem('ready'))}/>
             </Route>
             <Route exact path="/order">
               <Order name={window.localStorage.getItem('user')} />

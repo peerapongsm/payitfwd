@@ -1,7 +1,7 @@
 import React from "react";
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
-import firebase from 'firebase/app'
+import firebase from 'firebase/app';
 
 export default class OrderItem extends React.Component {
 
@@ -29,7 +29,7 @@ export default class OrderItem extends React.Component {
             Number of purchase :&nbsp;{order.unit}
           </Card.Text>
           <Card.Text>
-            Total price :&nbsp;${order.price}
+            Total price :&nbsp;${Math.round((order.price + Number.EPSILON) * 100) / 100}
           </Card.Text>
           <Button variant="danger" onClick={this.handleRemove}
             style={{marginTop:"0.5rem"}}>

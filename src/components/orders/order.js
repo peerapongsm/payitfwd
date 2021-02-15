@@ -33,7 +33,8 @@ export default class Order extends React.Component {
 
   handleCheckOut = (event) => {
     event.preventDefault();
-    firebase.database().ref('ready').push(this.state.orders);
+    let transactionRef = firebase.database().ref('ready').push(this.state.orders);
+    transactionRef.update({id:transactionRef.key});
     firebase.database().ref(this.props.name).remove();
     alert("You have successfully paid it forward!");
   }

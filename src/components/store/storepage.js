@@ -100,7 +100,7 @@ class MenuCard extends React.Component {
 
   handleChange = (event) => {
     let field = event.target.name;
-    let value = event.target.value;
+    let value = parseFloat(event.target.value);
     let changes = {};
     changes[field] = value;
     this.setState(changes);
@@ -122,7 +122,7 @@ class MenuCard extends React.Component {
         </Card.Body>
         <Form onSubmit={this.handleOrder}>
           <Form.Group controlId="formBasicEmail">
-            <Form.Control name="unit" type="number" defaultValue="1" onChange={this.handleChange}
+            <Form.Control name="unit" type="number" defaultValue={1} onChange={this.handleChange}
               style={{textAlign:"center", width:"7rem"}}/>
           </Form.Group>
           <Button type="submit" style={{marginBottom:"1rem", width:"7rem"}}>
