@@ -95,6 +95,7 @@ class MenuCard extends React.Component {
     let name = this.props.user.displayName;
     firebase.database().ref(name).push(newOrder);
     this.setState({unit: undefined});
+    alert("Your order was added into cart");
   }
 
   handleChange = (event) => {

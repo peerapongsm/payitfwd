@@ -4,7 +4,14 @@ import Button from 'react-bootstrap/Button';
 import firebase from 'firebase/app'
 
 export default class OrderItem extends React.Component {
-  
+
+  handleRemove = (event) => {
+    event.preventDefault();
+    this.props.callBack(this.props.order.price);
+    firebase.database().ref(this.props.name).child(this.props.order.id).remove();
+    alert("Your order has been removed");
+  }
+
   render() {
     let order = this.props.order;
     return (
