@@ -1,7 +1,19 @@
 {
-  /* Visit https://firebase.google.com/docs/database/security to learn more about security rules. */
+  // Allow anyone to read data, but only authenticated content owners can
+  // make changes to their data
+
   "rules": {
-    ".read": true,
-    ".write": true
+    "${uid}": {
+      ".read": "auth.uid != null",
+      ".write": "auth.uid != null"
+    },
+    "stores": {
+      ".read": true,
+      ".write": false
+    },
+    "ready": {
+      ".read": true,
+      ".write": "auth.uid != null"
+    }
   }
 }
