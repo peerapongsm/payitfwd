@@ -74,7 +74,7 @@ class App extends React.Component  {
               <StoreList stores={this.state.stores}/>
             </Route>
             <Route exact path="/available">
-              <AvaialableList />
+              <AvaialableList user={this.state.user} />
             </Route>
             <Route exact path="/order">
               <Order name={window.localStorage.getItem('user')} />

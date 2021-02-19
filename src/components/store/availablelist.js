@@ -76,7 +76,7 @@ export default class AvaialableList extends React.Component {
         if (id && order.id) {
           ref.child(id).child(order.id).on('value', (snap) => {
             if (snap.exists()) {
-              div = <OrderCard key={key} id={id} order={order}/>;
+              div = <OrderCard key={key} id={id} user={this.props.user} order={order}/>;
             }
           });
         }
@@ -121,28 +121,42 @@ class OrderCard extends React.Component {
 
     render() {
       let order= this.props.order;
-
-      return (
-        <Card style={{ "minWidth": '18rem', "alignItems": 'center', "margin": "1rem"}}>
-          <Card.Img variant="top" src={order.menu.img} style={{ "width": '18rem', "height": "10rem", "padding": "0.5rem"}}/>
-          <Card.Body>
-            <Card.Title>Available : {order.unit}</Card.Title>
-            <Card.Text>
-              Come pick {order.menu.name} at {order.restaurant} for free!
-            </Card.Text>
-          </Card.Body>
-          <Form onSubmit={this.handleRemove}>
-            <Form.Group controlId="formBasicEmail">
-              <Form.Control name="unit" type="number" defaultValue={1} onChange={this.handleChange}
-                style={{textAlign:"center", width:"7rem"}}/>
-            </Form.Group>
-            <Button variant="warning" type="submit"
-              disabled={this.state.unit < 1 || this.state.unit > this.props.order.unit}
-              style={{marginBottom:"1rem"}}>
-              Take
-            </Button>
-          </Form>
-        </Card>
-      )
+      let user = this.props.user;
+      if (user !== undefined) {
+        return (
+          <Card style={{ "minWidth": '18rem', "alignItems": 'center', "margin": "1rem"}}>
+            <Card.Img variant="top" src={order.menu.img} style={{ "width": '18rem', "height": "10rem", "padding": "0.5rem"}}/>
+            <Card.Body>
+              <Card.Title>Available : {order.unit}</Card.Title>
+              <Card.Text>
+                Come and get {order.menu.name} at {order.restaurant} for free!
+              </Card.Text>
+            </Card.Body>
+            <Form onSubmit={this.handleRemove}>
+              <Form.Group controlId="formBasicEmail">
+                <Form.Control name="unit" type="number" defaultValue={1} onChange={this.handleChange}
+                  style={{textAlign:"center", width:"7rem"}}/>
+              </Form.Group>
+              <Button variant="warning" type="submit"
+                disabled={this.state.unit < 1 || this.state.unit > this.props.order.unit}
+                style={{marginBottom:"1rem"}}>
+                Take
+              </Button>
+            </Form>
+          </Card>
+        )
+      } else {
+        return (
+          <Card style={{ "minWidth": '18rem', "alignItems": 'center', "margin": "1rem"}}>
+            <Card.Img variant="top" src={order.menu.img} style={{ "width": '18rem', "height": "10rem", "padding": "0.5rem"}}/>
+            <Card.Body>
+              <Card.Title>Available : {order.unit}</Card.Title>
+              <Card.Text>
+                Sign in to pick up {order.menu.name} at {order.restaurant} for free!
+              </Card.Text>
+            </Card.Body>
+          </Card>
+        )
+      }
     }
 }

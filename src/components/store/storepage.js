@@ -82,12 +82,6 @@ class MenuCard extends React.Component {
     };
   }
 
-  componentWillUnmount() {
-    if (this.props.user !== undefined && this.props.user !== null) {
-      firebase.database().ref(this.props.user.displayName).off();
-    }
-  }
-
   handleOrder = (event) => {
     event.preventDefault();
     let price = Number(this.props.menu.price.replace(/[^0-9.-]+/g,"")) * this.state.unit;
@@ -113,29 +107,48 @@ class MenuCard extends React.Component {
 
   render() {
     let menu = this.props.menu;
-    return (
-      <Card style={{ "minWidth": '18rem', "alignItems": 'center', "margin": "1rem"}}>
-        <Card.Img variant="top" src={menu.img} style={{ "width": '18rem', "height": "10rem", "padding": "0.5rem"}}/>
-        <Card.Body>
-          <Card.Title>{menu.name}</Card.Title>
-          <Card.Text>
-            {menu.price}
-          </Card.Text>
-          <Card.Text>
-            Allergens :&nbsp;{menu.allergy}
-          </Card.Text>
-        </Card.Body>
-        <Form onSubmit={this.handleOrder}>
-          <Form.Group controlId="formBasicEmail">
-            <Form.Control name="unit" type="number" defaultValue={1} onChange={this.handleChange}
-              style={{textAlign:"center", width:"7rem"}}/>
-          </Form.Group>
-          <Button type="submit" disabled={this.state.unit < 1}
-            style={{marginBottom:"1rem", width:"7rem"}}>
-            Add to cart
-          </Button>
-        </Form>
-      </Card>
-    )
+    let user = this.props.user;
+    if (user !== undefined) {
+      return (
+        <Card style={{ "minWidth": '18rem', "alignItems": 'center', "margin": "1rem"}}>
+          <Card.Img variant="top" src={menu.img} style={{ "width": '18rem', "height": "10rem", "padding": "0.5rem"}}/>
+          <Card.Body>
+            <Card.Title>{menu.name}</Card.Title>
+            <Card.Text>
+              {menu.price}
+            </Card.Text>
+            <Card.Text>
+              Allergens :&nbsp;{menu.allergy}
+            </Card.Text>
+          </Card.Body>
+          <Form onSubmit={this.handleOrder}>
+            <Form.Group controlId="formBasicEmail">
+              <Form.Control name="unit" type="number" defaultValue={1} onChange={this.handleChange}
+                style={{textAlign:"center", width:"7rem"}}/>
+            </Form.Group>
+            <Button type="submit" disabled={this.state.unit < 1}
+              style={{marginBottom:"1rem", width:"7rem"}}>
+              Add to cart
+            </Button>
+          </Form>
+        </Card>
+      )
+    } else {
+      return (
+        <Card style={{ "minWidth": '18rem', "alignItems": 'center', "margin": "1rem"}}>
+          <Card.Img variant="top" src={menu.img} style={{ "width": '18rem', "height": "10rem", "padding": "0.5rem"}}/>
+          <Card.Body>
+            <Card.Title>{menu.name}</Card.Title>
+            <Card.Text>
+              {menu.price}
+            </Card.Text>
+            <Card.Text>
+              Allergens :&nbsp;{menu.allergy}
+            </Card.Text>
+          </Card.Body>
+        </Card>
+      )
+    }
+
   }
 }

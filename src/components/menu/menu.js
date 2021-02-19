@@ -36,7 +36,6 @@ class Menu extends React.Component {
             <Nav style={{marginRight: "1.5rem", fontSize:"16pt"}}>
               <NavDropdown title={user.displayName} id="basic-nav-dropdown">
                 <NavDropdown.Item href="/setting">Setting</NavDropdown.Item>
-                <NavDropdown.Item href="/history">Order History</NavDropdown.Item>
                 <NavDropdown.Item onClick={callBack}>Sign out</NavDropdown.Item>
               </NavDropdown>
             </Nav>
