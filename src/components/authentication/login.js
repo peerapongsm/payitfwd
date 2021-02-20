@@ -61,7 +61,8 @@ export default class Login extends React.Component {
                 onChange={this.handleChange}
               />
             </Form.Group>
-            <Button block size="lg" type="submit">
+            <Button block size="lg" type="submit"
+              disabled={this.state.password !== undefined && this.state.password.length === 0}>
               Login
             </Button>
           </Form>

@@ -76,7 +76,7 @@ export default class Signup extends React.Component {
               />
             </Form.Group>
             <Button block size="lg" type="submit"
-              disabled={this.state.password.length === 0 && this.state.password !== this.state.confirmPassword}>
+              disabled={this.state.password !== undefined && this.state.password.length === 0 && this.state.password !== this.state.confirmPassword}>
               Sign up
             </Button>
           </Form>
