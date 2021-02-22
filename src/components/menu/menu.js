@@ -52,7 +52,7 @@ class Menu extends React.Component {
                 <Nav.Link href="/" eventKey="donate">Donate</Nav.Link>
               </Nav.Item>
               <Nav.Item>
-                <Nav.Link href="/available" eventKey="available">Food Avaialable</Nav.Link>
+                <Nav.Link href="/available" eventKey="available">Food Available</Nav.Link>
               </Nav.Item>
             </Nav>
             <Nav>
