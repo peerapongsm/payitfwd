@@ -45,9 +45,9 @@ class Menu extends React.Component {
     } else {
       return (
         <Navbar sticky="top" bg="dark" variant="dark" expand="lg">
-          <Navbar.Brand href="/">PayItFwd</Navbar.Brand>
+          <Navbar.Brand href="/" style={{marginLeft: "1.5rem"}}>PayItFwd</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
-            <Nav className="mr-auto" activeKey="donate">
+            <Nav className="mr-auto" activeKey="donate" style={{fontSize:"14pt"}}>
               <Nav.Item>
                 <Nav.Link href="/" eventKey="donate">Donate</Nav.Link>
               </Nav.Item>
