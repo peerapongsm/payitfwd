@@ -55,7 +55,7 @@ class Menu extends React.Component {
                 <Nav.Link href="/available" eventKey="available">Food Available</Nav.Link>
               </Nav.Item>
             </Nav>
-            <Nav>
+            <Nav style={{marginRight: "1.5rem", fontSize:"16pt"}}>
               <Nav.Link href="/login">Sign in</Nav.Link>
             </Nav>
         </Navbar>
